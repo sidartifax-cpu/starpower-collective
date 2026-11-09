@@ -1,0 +1,736 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="StarPower Collective celebrates music, community, culture and the stories that connect generations.">
+  <title>StarPower Collective | Every Life Has a Soundtrack</title>
+  <link rel="icon" type="image/png" href="images/starp.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="The StarPower Collective home">
+      <img
+  src="images/star-power-logo.png"
+  alt="StarPower Collective Logo"
+  class="brand-logo"
+>
+      <span>THE STARPOWER <small>COLLECTIVE</small></span>
+    </a>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="#story">Our Story</a>
+      <a href="#shows">The Network</a>
+      <a href="#interviews">Interviews</a>
+      <a href="#be-a-guest">Be a Guest</a>
+      <a href="#village">Story Tools</a>
+      <a href="#legacy">Legacy</a>
+      <a href="#shop">Shop</a>
+    </nav>
+    <button class="listen-live" type="button" data-radio-play>Listen Live</button>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="eyebrow">HARLEM ROOTS · GLOBAL VOICES</p>
+        <h1>Every Life Has<br>a <em>Soundtrack.</em></h1>
+        <p class="hero-lead">Every story deserves to be heard.</p>
+        <p class="hero-description">
+          Music. Memories. Culture. Community.
+          A gathering place for the voices that shape our world.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-gold" href="#be-a-guest">Begin Your Guest Journey</a>
+          <button class="btn btn-outline" type="button" data-radio-play>Listen Live</button>
+        </div>
+        <aside class="next-show-card" aria-labelledby="next-show-title">
+          <p class="eyebrow" id="next-show-title">NEXT STARPOWER SHOW</p>
+          <p class="next-show-status" id="next-show-status" aria-live="polite">
+            Next broadcast to be announced.
+          </p>
+          <div class="show-countdown" id="show-countdown" hidden aria-live="off">
+            <span><strong data-countdown="days">0</strong> days</span>
+            <span><strong data-countdown="hours">0</strong> hours</span>
+            <span><strong data-countdown="minutes">0</strong> minutes</span>
+            <span><strong data-countdown="seconds">0</strong> seconds</span>
+          </div>
+          <a
+            class="next-show-reminder"
+            href="mailto:hello@starpowercollective.com?subject=StarPower%20Show%20Reminder"
+          >Request a reminder by email</a>
+          <span class="next-show-note">A confirmed broadcast date has not been posted.</span>
+        </aside>
+      </div>
+      
+<!-- STARPOWER ROTATING INTERVIEWEE GALLERY -->
+<div class="hero-gallery" aria-label="StarPower interviewee portraits">
+  <div class="hero-gallery-frame">
+    <img
+      id="hero-portrait"
+    class="visible"
+    alt="Portrait of Charles Ray"
+    src="images/interviewees/charles-ray.jpg"
+    >
+    <div class="hero-gallery-shade"></div>
+  </div>
+
+  <div class="hero-gallery-caption">
+    <span class="hero-gallery-label">
+      I HAVE STARPOWER
+    </span>
+    <h3 id="hero-guest-name">Charles Ray</h3>
+    <span class="hero-gallery-line"></span>
+  </div>
+</div>
+<!-- END INTERVIEWEE GALLERY -->
+
+      <div class="hero-bottom">IT TAKES A VILLAGE TO RAISE A RADIO.</div>
+    </section>
+
+    <section class="intro section" id="story">
+      <p class="eyebrow">THE STORY BEHIND THE SOUND</p>
+      <h2>Ordinary People.<br><em>Extraordinary Stories.</em></h2>
+      <p>
+        StarPower Collective began with a simple belief:
+        everyone has a story worth sharing.
+      </p>
+      <p>
+        Through music, conversations and shared memories,
+        we celebrate the people whose experiences become
+        the history of our communities.
+      </p>
+      <a class="text-link" href="#legacy">Discover the legacy →</a>
+    </section>
+
+    <section class="network section" id="shows">
+      <p class="eyebrow">THE STARPOWER NETWORK</p>
+      <h2>Many Voices.<br><em>One Village.</em></h2>
+      <div class="cards">
+        <article class="show-card">
+          <span class="card-number">01 / MUSIC</span>
+          <h3>Nu Soul Highway Radio</h3>
+          <p>Soulful sounds, cultural connections and music that moves generations.</p>
+        </article>
+        <article class="show-card">
+          <span class="card-number">02 / COMMUNITY</span>
+          <h3>Psyba Village</h3>
+          <p>Conversations, creativity and the power of collective storytelling.</p>
+        </article>
+        <article class="show-card">
+          <span class="card-number">03 / HERITAGE</span>
+          <h3>SPC Alumni Edition</h3>
+          <p>Celebrating the people and moments that shaped the StarPower journey.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="guest-hub section" id="be-a-guest" aria-labelledby="guest-hub-title">
+      <div class="guest-hub-heading">
+        <p class="eyebrow">YOUR STORY BELONGS HERE</p>
+        <h2 id="guest-hub-title">Do You Have<br><em>StarPower?</em></h2>
+        <p>
+          You don't have to be famous to have a story worth sharing.
+          Every life has a soundtrack, and every voice carries a legacy.
+        </p>
+      </div>
+
+      <div class="guest-steps">
+        <article class="guest-step">
+          <span class="guest-step-number">01 / DISCOVER</span>
+          <h3>Meet StarPower Collective</h3>
+          <p>
+            We make thoughtful conversations about music, culture,
+            creativity, community, and the experiences that shape a life.
+          </p>
+        </article>
+
+        <article class="guest-step">
+          <span class="guest-step-number">02 / TELL YOUR STORY</span>
+          <h3>Find the moments that matter</h3>
+          <p>As you prepare, think about:</p>
+          <ul>
+            <li>Who you are and the work you do</li>
+            <li>Your creative or professional journey</li>
+            <li>How you contribute to your community</li>
+            <li>Defining experiences and the music that shaped you</li>
+            <li>What you hope listeners remember</li>
+          </ul>
+        </article>
+
+        <article class="guest-step guest-practice">
+          <span class="guest-step-number">03 / PRACTICE</span>
+          <h3>Try a practice question</h3>
+          <p class="practice-progress" id="practice-progress" aria-live="polite">
+            Question 1 of 12
+          </p>
+          <progress id="practice-progress-bar" max="12" value="1" aria-label="Practice question progress">1 of 12</progress>
+          <p class="practice-question" id="practice-question" aria-live="polite">
+            What does music mean to you?
+          </p>
+          <label for="practice-answer">Your private notes (stay in this browser session)</label>
+          <textarea id="practice-answer" rows="4" maxlength="2000"></textarea>
+          <div class="practice-controls">
+            <button class="btn btn-outline" id="practice-previous" type="button" disabled>Previous</button>
+            <button class="btn btn-gold" id="practice-next" type="button">Next question</button>
+            <button class="practice-reset" id="practice-reset" type="button">Restart practice</button>
+          </div>
+        </article>
+
+        <article class="guest-step guest-application">
+          <span class="guest-step-number">04 / APPLY</span>
+          <h3>Start your guest application</h3>
+          <p>
+            Submit your details for StarPower Collective to consider your
+            guest application. Your information will be sent to Formspree
+            and used to review your application and contact you.
+          </p>
+          <form id="guest-application" data-formspree-endpoint="https://formspree.io/f/xjyynkyo">
+            <div class="guest-form-grid">
+              <div>
+                <label for="guest-name">Full name</label>
+                <input id="guest-name" name="Full name" autocomplete="name" maxlength="120" required>
+              </div>
+              <div>
+                <label for="guest-email">Email address</label>
+                <input id="guest-email" name="Email address" type="email" autocomplete="email" maxlength="254" required>
+              </div>
+              <div>
+                <label for="guest-phone">Phone number (optional)</label>
+                <input id="guest-phone" name="Phone number" type="tel" autocomplete="tel" maxlength="40">
+              </div>
+              <div>
+                <label for="guest-city-state">City and state</label>
+                <input id="guest-city-state" name="City and state" autocomplete="address-level2" maxlength="120" required>
+              </div>
+              <div class="guest-form-wide">
+                <label for="guest-role">Artist, creator, entrepreneur, or community role</label>
+                <input id="guest-role" name="Role" maxlength="160" required>
+              </div>
+              <div class="guest-form-wide">
+                <label for="guest-bio">Short biography</label>
+                <textarea id="guest-bio" name="Short biography" rows="4" maxlength="1200" required></textarea>
+              </div>
+              <div class="guest-form-wide">
+                <label for="guest-topics">Proposed interview topics</label>
+                <textarea id="guest-topics" name="Proposed interview topics" rows="3" maxlength="1000" required></textarea>
+              </div>
+              <div class="guest-form-wide">
+                <label for="guest-why">Why does your story matter to listeners?</label>
+                <textarea id="guest-why" name="Why this story matters" rows="3" maxlength="1000" required></textarea>
+              </div>
+              <div class="guest-form-wide">
+                <label for="guest-links">Relevant website or social links (optional)</label>
+                <textarea id="guest-links" name="Website or social links" rows="2" maxlength="600"></textarea>
+              </div>
+              <div class="guest-form-wide">
+                <label for="guest-availability">General availability</label>
+                <input id="guest-availability" name="General availability" maxlength="300" required>
+              </div>
+            </div>
+            <label class="guest-consent">
+              <input type="checkbox" name="Contact consent" value="Yes" required>
+              I agree to have this information sent through Formspree to StarPower Collective so the team can review my application and contact me.
+            </label>
+            <button class="btn btn-gold" type="submit" disabled>Submit guest application</button>
+            <p class="guest-form-status" id="guest-form-status" aria-live="polite">
+              Application submissions are not configured yet. Add your Formspree form endpoint to connect this form; nothing will be sent before then.
+            </p>
+            <a
+              class="formspree-setup-link"
+              href="https://formspree.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Create a Formspree form to get an endpoint</a>
+          </form>
+        </article>
+
+        <article class="guest-step">
+          <span class="guest-step-number">05 / GET READY</span>
+          <h3>Feel prepared for the conversation</h3>
+          <ul>
+            <li>Expect a relaxed, guided conversation about your experiences.</li>
+            <li>Use headphones and a reliable microphone when recording remotely.</li>
+            <li>Choose a quiet room and silence notifications.</li>
+            <li>Test your audio and internet connection beforehand.</li>
+            <li>Bring a few stories and the music that helps tell them.</li>
+            <li>We will confirm scheduling and recording details with you directly.</li>
+          </ul>
+          <a class="btn btn-gold" href="#guest-application">Begin your guest journey</a>
+        </article>
+      </div>
+    </section>
+
+<!-- =====================================
+     OUR CREATIVE UNIVERSE
+===================================== -->
+<section class="creative-universe section"
+         id="creative-universe"
+         aria-labelledby="universe-title">
+
+  <div class="universe-intro">
+    <p class="universe-eyebrow">
+      ROOTED IN CULTURE. CONNECTED BY STORIES.
+    </p>
+
+    <h2 id="universe-title">
+      Our Creative <em>Universe</em>
+    </h2>
+
+    <p>
+      From the soul of Harlem to the voices we
+      preserve, discover the creative connections
+      behind StarPower Collective.
+    </p>
+  </div>
+
+  <!-- PSYBA VILLAGE -->
+  <article class="universe-umbrella">
+    <div class="universe-logo-panel">
+      <img
+        src="images/psyba-village-logo.png"
+        alt="Psyba Village — Portal to the Soul of Harlem"
+        loading="lazy">
+    </div>
+
+    <div class="universe-umbrella-copy">
+      <span class="universe-kicker">
+        THE CREATIVE HOME
+      </span>
+
+      <h3>Psyba Village</h3>
+
+      <p>
+        The esoteric home of all things created.
+        Psyba Village is the creative umbrella
+        where culture, consciousness, artistic
+        expression, and storytelling meet.
+      </p>
+
+      <span class="universe-role">
+        Portal to the Soul of Harlem
+      </span>
+    </div>
+  </article>
+
+  <div class="universe-connector"
+       aria-hidden="true">
+    <span></span>
+    <span class="universe-star">✦</span>
+    <span></span>
+  </div>
+
+  <!-- BROADCAST RELATIONSHIP -->
+  <div class="universe-broadcast">
+
+    <article class="universe-card">
+      
+<div class="universe-brand-logo">
+  <img
+    src="images/NSHR-logo.gif"
+    alt="Nu Soul Highway Radio logo"
+    loading="lazy"
+  >
+</div>
+
+
+      <span class="universe-kicker">
+        THE RADIO PLATFORM
+      </span>
+
+      <h3>Nu Soul Highway Radio</h3>
+
+      <p>
+        A radio platform for soulful sounds,
+        cultural connections, and music that
+        moves generations.
+      </p>
+      <button class="universe-link" type="button" data-radio-play>
+        Listen Live <span aria-hidden="true">→</span>
+      </button>
+    </article>
+
+    <article class="universe-card universe-card-featured">
+      
+<div class="universe-brand-logo">
+  <img
+    src="images/star-power-logo.png"
+    alt="StarPower Collective logo"
+    loading="lazy"
+  >
+</div>
+
+
+      <span class="universe-kicker">
+        THE INTERVIEW SHOW
+      </span>
+
+      <h3>StarPower Collective</h3>
+
+      <p>
+        A space for conversations with people
+        whose music, experiences, and personal
+        journeys deserve to be heard.
+      </p>
+
+      <a class="universe-link" href="#interviews">
+        Explore the Interviews
+        <span aria-hidden="true">→</span>
+      </a>
+    </article>
+  </div>
+
+  <p class="universe-relationship-note">
+    StarPower Collective is produced for
+    Nu Soul Highway Radio.
+  </p>
+
+  <div class="universe-connector"
+       aria-hidden="true">
+    <span></span>
+    <span class="universe-star">✦</span>
+    <span></span>
+  </div>
+
+  <!-- IMMOORTAL SOULS -->
+  <article class="universe-legacy">
+    
+<div class="universe-legacy-art">
+  <img
+    src="images/is-logo.png"
+    alt="Immoortal Souls logo"
+    class="universe-legacy-logo"
+    loading="lazy"
+  >
+</div>
+
+
+    <div class="universe-legacy-copy">
+      <span class="universe-kicker">
+        BORN FROM THE STORIES
+      </span>
+
+      <h3>Immoortal Souls</h3>
+
+      <p>
+        Some StarPower guests passed away after
+        their interviews. Their recorded voices
+        became irreplaceable memories, leaving
+        us wishing we had captured even more.
+      </p>
+
+      <p>
+        Immoortal Souls grew from that experience:
+        a commitment to preserving people's
+        stories while they are here to tell them.
+      </p>
+
+      <a class="universe-link" href="#legacy">
+        Discover Immoortal Souls
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </article>
+
+  <p class="universe-closing">
+    Every life has a soundtrack.<br>
+    <em>Every voice carries a legacy.</em>
+  </p>
+</section>
+<!-- END CREATIVE UNIVERSE -->
+
+<section class="archive section" id="interviews">
+  <div class="archive-heading">
+    <div>
+      <p class="eyebrow">THE STARPOWER ARCHIVES</p>
+      <h2>Voices of<br><em>the Village.</em></h2>
+    </div>
+    <p class="archive-intro">
+      Every conversation is a piece of history.
+      Explore the music, memories and personal
+      stories that connect our community.
+    </p>
+  </div>
+
+  <div class="sp-curated-archive">
+    <div class="sp-video-toolbar">
+      <label class="sr-only" for="sp-curated-search">
+        Search StarPower video titles and descriptions
+      </label>
+      <input
+        type="search"
+        id="sp-curated-search"
+        placeholder="Search the Village..."
+      >
+      <span id="sp-curated-count" aria-live="polite"></span>
+    </div>
+
+    <div id="sp-curated-grid" class="sp-video-grid"></div>
+    <p id="sp-curated-empty" class="sp-video-empty" hidden>
+      No videos match your search.
+    </p>
+  </div>
+
+</section>
+
+<dialog class="sp-video-dialog" id="sp-video-dialog" aria-labelledby="sp-video-dialog-title">
+  <div class="sp-video-dialog-header">
+    <h2 id="sp-video-dialog-title"></h2>
+    <button class="sp-video-dialog-close" type="button" aria-label="Close video player" autofocus>
+      Close
+    </button>
+  </div>
+  <div class="sp-video-player" id="sp-video-player"></div>
+  <p class="sp-video-fallback">
+    If the video does not play here,
+    <a id="sp-video-youtube-link" href="#" target="_blank" rel="noopener noreferrer">
+      watch it on YouTube
+    </a>.
+  </p>
+</dialog>
+
+<section class="featured-video section" id="featured-interview">
+  <p class="eyebrow">FROM THE STARPOWER ARCHIVES</p>
+  <h2>Stories Worth <em>Remembering.</em></h2>
+
+  <div class="video-container">
+    <iframe
+      src="https://www.youtube.com/embed/EU5PacdZZgE"
+      title="StarPower Collective archival interview"
+      loading="lazy"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen>
+    </iframe>
+  </div>
+</section>
+
+<!-- THE VILLAGE GATEWAY -->
+<section class="village-gateway section" id="village">
+  <div class="village-heading">
+    <p class="eyebrow">THE STARPOWER EXPERIENCE</p>
+    <h2>Every Story Deserves<br><em>to Live On.</em></h2>
+    <p>
+      Some memories begin with a conversation.
+      Others begin with a song. Where will yours begin?
+    </p>
+  </div>
+
+  <div class="village-paths">
+
+    <!-- FAMILY LEGACY PATH -->
+    <article class="village-card">
+      <div class="village-card-art family-art">
+        <span>01 / FAMILY LEGACY</span>
+        <span class="village-art-symbol">✦</span>
+      </div>
+
+      <div class="village-card-body">
+        <p class="eyebrow">IMMOORTAL SOULS</p>
+        <h3>The Stories<br>We Carry</h3>
+        <p>
+          Your family history is more than names
+          and dates. Discover 10 questions that
+          can open a lifetime of memories.
+        </p>
+
+        <button class="btn btn-gold"
+                type="button"
+                data-open-experience="legacy">
+          Get the Free Questions
+        </button>
+      </div>
+    </article>
+
+    <!-- MUSIC PATH -->
+    <article class="village-card">
+      <div class="village-card-art music-art">
+        <span>02 / YOUR SOUNDTRACK</span>
+        <span class="village-art-symbol">♫</span>
+      </div>
+
+      <div class="village-card-body">
+        <p class="eyebrow">VOICES OF THE VILLAGE</p>
+        <h3>My Life in<br>Five Songs</h3>
+        <p>
+          Five songs. Five memories. One remarkable
+          life. Build a personal soundtrack and
+          remember the moments behind the music.
+        </p>
+
+        <button class="btn btn-gold"
+                type="button"
+                data-open-experience="music">
+          Build My Soundtrack
+        </button>
+      </div>
+    </article>
+  </div>
+
+  <!-- FAMILY EXPERIENCE -->
+  <div class="village-experience" id="legacy-experience"
+       hidden>
+    <button class="village-close" type="button"
+            data-close-experience>Close ×</button>
+
+    <p class="eyebrow">THE LEGACY STARTER KIT</p>
+    <h3>10 Questions Worth Asking</h3>
+    <p>Use these questions to begin a meaningful
+       conversation with someone you love.</p>
+
+    <ol class="legacy-questions">
+      <li>What is your earliest childhood memory?</li>
+      <li>What was your neighborhood like growing up?</li>
+      <li>Which family traditions meant the most to you?</li>
+      <li>What song takes you back to your youth?</li>
+      <li>Who taught you your most important lesson?</li>
+      <li>What challenge changed the course of your life?</li>
+      <li>What family story should never be forgotten?</li>
+      <li>What are you most proud of?</li>
+      <li>What wisdom would you share with future generations?</li>
+      <li>How would you like to be remembered?</li>
+    </ol>
+
+    <button class="btn btn-gold" id="print-legacy"
+            type="button">
+      Print or Save as PDF
+    </button>
+
+    <p class="village-footnote">
+      A free resource from StarPower Collective.
+      Explore our Immoortal Souls legacy preservation
+      services in the Legacy section below.
+    </p>
+  </div>
+
+  <!-- MUSIC EXPERIENCE -->
+  <div class="village-experience" id="music-experience"
+       hidden>
+    <button class="village-close" type="button"
+            data-close-experience>Close ×</button>
+
+    <p class="eyebrow">THE SOUNDTRACK OF YOUR LIFE</p>
+    <h3>My Life in Five Songs</h3>
+    <p>
+      Enter five songs and the memories they bring
+      back. Your soundtrack stays on your device
+      unless you choose to share it.
+    </p>
+
+    <form id="soundtrack-form">
+      <label for="soundtrack-name">Your name</label>
+      <input id="soundtrack-name" name="name"
+             type="text" maxlength="100"
+             placeholder="Your name" required>
+
+      <div id="soundtrack-fields"></div>
+
+      <button class="btn btn-gold" type="submit">
+        Download My Soundtrack
+      </button>
+    </form>
+
+    <p class="village-footnote">
+      Your entries are not sent to StarPower.
+      A text file will download to your device.
+    </p>
+  </div>
+</section>
+<!-- END VILLAGE GATEWAY -->
+
+    <section class="legacy section" id="legacy">
+      <div class="legacy-inner">
+        <p class="eyebrow">INTRODUCING IMMOORTAL SOULS</p>
+        <h2>Their Voices.<br><em>Our History.</em><br>Your Legacy.</h2>
+        <p>
+          Every elder carries a library of memories.
+          Immoortal Souls helps families capture their voices,
+          preserve their photographs, and share their wisdom
+          with generations yet to come.
+        </p>
+        <a class="btn btn-gold" href="#connect">Explore Family Legacy Preservation</a>
+      </div>
+    </section>
+
+    <section class="shop section" id="shop" aria-labelledby="shop-title">
+      <p class="eyebrow">WEAR YOUR STARPOWER</p>
+      <h2 id="shop-title">Do You Have<br><em>StarPower?</em></h2>
+      <p class="shop-intro">
+        You don't have to be famous to shine. Every piece supports
+        StarPower Collective, celebrating everyday people and their music since 2010.
+      </p>
+
+      <div class="shop-grid">
+        <article class="shop-card">
+          <div
+            class="shopify-buy-button"
+            id="product-component-1794262256692"
+            aria-label="StarPower Collective Tee purchase options"
+          >
+          </div>
+          <p class="shopify-status" id="shopify-status" aria-live="polite">
+            Loading secure checkout…
+          </p>
+          <div class="shop-fallback">
+            <h3>StarPower Collective Tee</h3>
+            <p>
+              Soft, unisex cotton tee in sizes XS–4XL, for everyone with
+              a story and a soundtrack.
+            </p>
+            <p class="shop-price">$23</p>
+          </div>
+          <p class="shop-note">
+            Fulfilled by Amerukhan Basics, our family apparel brand.
+          </p>
+        </article>
+
+        <article class="shop-card shop-card--soon" aria-label="Coming soon">
+          <h3>StarPower Patch Hat</h3>
+          <p>Embroidered with the classic StarPower patch.</p>
+          <p class="shop-price">Coming soon</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="contact section" id="connect">
+      <p class="eyebrow">JOIN STARPOWER COLLECTIVE</p>
+      <h2>Do You Have<br><em>StarPower?</em></h2>
+      <p>Sure you do. And your story matters.</p>
+      <a class="btn btn-gold" href="#be-a-guest">Begin Your Guest Journey</a>
+      <button class="btn btn-outline contact-listen-link" type="button" data-radio-play>Listen Live</button>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <strong>STARPOWER COLLECTIVE</strong>
+    <p>Music is the shower of Life!</p>
+    <small>© <span id="year"></span> StarPower Collective.</small>
+  </footer>
+  <aside class="radio-player" id="radio-player" aria-label="Nu Soul Highway Radio player" hidden>
+    <div class="radio-player-heading">
+      <div>
+        <p class="eyebrow">LISTEN LIVE</p>
+        <h2>Nu Soul Highway Radio</h2>
+      </div>
+      <button class="radio-player-close" type="button" aria-label="Close radio player">×</button>
+    </div>
+    <audio id="radio-stream" controls preload="none">
+      <source src="https://streamer.radio.co/s8dd253f7b/listen" type="audio/mpeg">
+      Your browser does not support embedded audio.
+    </audio>
+    <p class="radio-player-status" id="radio-player-status" aria-live="polite">
+      Press play to listen live.
+    </p>
+    <a class="radio-player-fallback" href="https://streamer.radio.co/s8dd253f7b/listen" target="_blank" rel="noopener noreferrer">
+      Open the stream directly
+    </a>
+  </aside>
+<script src="js/curated-gallery.js" defer></script>
+<script src="js/shopify-buy-button.js" defer></script>
+</body>
+</html>
