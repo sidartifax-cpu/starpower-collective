@@ -2301,3 +2301,10 @@ body { padding-bottom: 88px; }
 @media (min-width: 720px) {
   .shop-card--feature .shop-card-img { max-width: 240px; margin-left: auto; margin-right: auto; }
 }
+
+/* Shop: Soundtrack tee now on sale (hide fallback image once Shopify loads) */
+.shop-card--feature.shopify-buy-loaded .shop-fallback { display: none; }
+.shop-card--feature { border-style: solid; }
+@media (min-width: 720px) {
+  .shop-card .shopify-buy-button { max-width: 300px; margin-left: auto; margin-right: auto; }
+}

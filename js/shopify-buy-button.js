@@ -1,15 +1,19 @@
 (() => {
-  const component = document.querySelector("#product-component-1794262256692");
-  const status = document.querySelector("#shopify-status");
-  if (!component || !status) return;
+  // Each product on the page: <div data-shopify-product-id="..." data-shopify-status="status-element-id">
+  const products = [...document.querySelectorAll("[data-shopify-product-id]")];
+  if (!products.length) return;
 
   const scriptUrl =
     "https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js";
 
-  function showLoadError(error) {
+  const statusFor = node => document.getElementById(node.dataset.shopifyStatus);
+
+  function showLoadError(error, node) {
     console.error("Shopify Buy Button could not be loaded:", error);
-    status.textContent =
-      "The secure checkout button could not load. Please try again later.";
+    (node ? [node] : products).forEach(n => {
+      const status = statusFor(n);
+      if (status) status.textContent = "The secure checkout button could not load. Please try again later.";
+    });
   }
 
   function initializeShopifyBuyButton() {
@@ -26,19 +30,20 @@
 
     shopifyBuy.UI.onReady(client)
       .then(ui => {
+        products.forEach(node => {
         const observer = new MutationObserver(() => {
-          if (component.querySelector("iframe, .shopify-buy-frame")) {
-            component.closest(".shop-card")?.classList.add("shopify-buy-loaded");
-            status.hidden = true;
+          if (node.querySelector("iframe, .shopify-buy-frame")) {
+            node.closest(".shop-card")?.classList.add("shopify-buy-loaded");
+            if (statusFor(node)) statusFor(node).hidden = true;
             observer.disconnect();
           }
         });
-        observer.observe(component, { childList: true, subtree: true });
+        observer.observe(node, { childList: true, subtree: true });
 
         try {
           ui.createComponent("product", {
-            id: "4454981926974",
-            node: component,
+            id: node.dataset.shopifyProductId,
+            node: node,
             moneyFormat: "%24%7B%7Bamount%7D%7D",
             options: {
             product: {
@@ -141,8 +146,9 @@
           });
         } catch (error) {
           observer.disconnect();
-          showLoadError(error);
+          showLoadError(error, node);
         }
+        });
       })
       .catch(showLoadError);
   }
