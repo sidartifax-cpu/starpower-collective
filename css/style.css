@@ -1886,3 +1886,124 @@ section[id] { scroll-margin-top: 110px; }
   .guest-form-wide { grid-column: auto; }
   .contact-listen-link { margin: 12px 0 0; }
 }
+
+.story-title em {
+  color: var(--gold);
+}
+
+.story-origin {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  align-items: center;
+  gap: clamp(24px, 5vw, 64px);
+  max-width: 1120px;
+  margin: 42px auto 0;
+  text-align: left;
+}
+
+.story-origin-image img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  filter: drop-shadow(0 8px 18px rgba(245, 228, 0, .24));
+}
+
+.story-origin-copy {
+  min-width: 0;
+}
+
+.story-origin-copy p {
+  margin: 0 0 16px;
+  color: var(--ivory);
+}
+
+.story-origin-copy .story-start-label {
+  margin-bottom: 12px;
+  color: var(--gold);
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+}
+
+.story-quote {
+  margin: 26px 0 0;
+  color: var(--gold);
+  font-family: var(--heading);
+  font-size: clamp(1.7rem, 3vw, 2.3rem);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.story-then-now {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 20px;
+  max-width: 800px;
+  margin: 56px auto 0;
+}
+
+.story-then-now-title {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: var(--ivory);
+  font-family: var(--heading);
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.story-figure {
+  min-width: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.story-figure img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: 190px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.story-figure figcaption {
+  margin-top: 10px;
+  color: var(--ivory);
+  font-size: .9rem;
+}
+
+.story-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 36px;
+}
+
+@media (max-width: 767px) {
+  .story-origin {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .story-origin-image {
+    width: min(100%, 520px);
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .story-then-now {
+    gap: 12px;
+  }
+
+  .story-figure img {
+    height: 140px;
+  }
+
+  .story-figure figcaption {
+    font-size: .78rem;
+  }
+}
