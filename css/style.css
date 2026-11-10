@@ -2088,3 +2088,8 @@ section[id] { scroll-margin-top: 110px; }
 .wall-link { text-align: center; margin-top: 2.5rem; }
 .wall-link .btn-gold, .wall-link .btn-gold:hover { color: var(--navy); }
 #interviews .wall-link a.btn-gold { color: var(--navy); }
+
+/* Footer credit */
+.footer-credit { font-size: .8rem; margin: .75rem 0 0; opacity: .85; text-align: center; }
+.footer-credit a { color: var(--gold); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.footer-credit a:hover, .footer-credit a:focus-visible { color: var(--ivory); }
