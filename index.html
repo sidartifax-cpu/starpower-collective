@@ -844,18 +844,169 @@
 </section>
 <!-- END VILLAGE GATEWAY -->
 
-    <section class="legacy section" id="legacy">
-      <div class="legacy-inner">
-        <p class="eyebrow">INTRODUCING IMMOORTAL SOULS</p>
-        <h2>Their Voices.<br><em>Our History.</em><br>Your Legacy.</h2>
-        <p>
-          Every elder carries a library of memories.
-          Immoortal Souls helps families capture their voices,
-          preserve their photographs, and share their wisdom
-          with generations yet to come.
+    <!-- ===== IMMOORTAL SOULS: INTRODUCTION + LEGACY CALL ===== -->
+    <!-- To switch to a booking page later, paste its URL into data-booking-url below
+         (for example data-booking-url="https://calendly.com/your-link"). Leave it empty to use the form. -->
+    <section class="legacy section imsouls" id="legacy" aria-labelledby="imsouls-title"
+             data-booking-url="">
+      <div class="imsouls-inner">
+        <p class="eyebrow imsouls-eyebrow">INTRODUCING IMMOORTAL SOULS</p>
+        <h2 class="imsouls-title" id="imsouls-title">Give Them Their Flowers<br><em>While They're Here.</em></h2>
+        <p class="imsouls-brandline">Their Voices. Our History. Your Legacy.</p>
+
+        <p class="imsouls-origin">
+          Since 2010, StarPower Collective has sat down with everyday people to talk about the music that shaped their lives.
+          Some of those guests have since passed on, and their families told us those recordings became priceless.
+          Immoortal Souls grew from that lesson: capture the voice, the stories and the wisdom now, while you can still laugh together.
         </p>
-        <a class="btn btn-gold" href="#connect">Explore Family Legacy Preservation</a>
+
+        <ul class="imsouls-pillars">
+          <li><strong>Preserve the voice.</strong> Guided conversations that capture how they really sound.</li>
+          <li><strong>Protect the story.</strong> Photographs, memories and family history, handled with care.</li>
+          <li><strong>Build the legacy.</strong> A keepsake made to be passed down.</li>
+        </ul>
+
+        <div class="imsouls-founding">
+          <p class="imsouls-founding-theme">Five Families. Five Legacies. A Thousand Tomorrows.</p>
+          <p>We're opening a few spots for Founding Families who want to be first.</p>
+          <p class="imsouls-gift">Planning a birthday, anniversary, family reunion or holiday? Honoring a parent or grandparent this way is a gift they'll never forget.</p>
+        </div>
+
+        <p class="imsouls-trust">Your family keeps its memories. Nothing is shared without your consent, and real people review every step.</p>
+
+        <div class="imsouls-cta">
+          <button class="btn imsouls-btn" type="button" id="imsouls-cta" aria-expanded="false" aria-controls="imsouls-form-wrap">
+            Request a Free Legacy Call
+          </button>
+          <p class="imsouls-privacy">We'll only use this to contact you about Immoortal Souls.</p>
+        </div>
+
+        <div class="imsouls-form-wrap" id="imsouls-form-wrap" hidden>
+          <!-- PASTE YOUR FORMSPREE ID: replace IMMOORTAL_FORM_ID in the action below with your real form ID
+               (for example https://formspree.io/f/abcdwxyz). -->
+          <form class="imsouls-form" id="imsouls-form" action="https://formspree.io/f/IMMOORTAL_FORM_ID" method="POST" novalidate>
+            <p class="imsouls-form-intro">A free 15-minute call. No pressure, just a conversation.</p>
+
+            <input type="hidden" name="source" value="Immoortal Souls">
+            <input type="hidden" name="_subject" value="New Immoortal Souls Legacy Call request">
+            <div class="imsouls-hp" aria-hidden="true">
+              <label for="imsouls-gotcha">Leave this field empty</label>
+              <input type="text" id="imsouls-gotcha" name="_gotcha" tabindex="-1" autocomplete="off">
+            </div>
+
+            <div class="imsouls-field">
+              <label for="imsouls-name">Your name <span class="imsouls-req">(required)</span></label>
+              <input type="text" id="imsouls-name" name="name" autocomplete="name" required aria-describedby="imsouls-name-error">
+              <p class="imsouls-error" id="imsouls-name-error" hidden>Please enter your name.</p>
+            </div>
+
+            <div class="imsouls-field">
+              <label for="imsouls-email">Email <span class="imsouls-req">(required)</span></label>
+              <input type="email" id="imsouls-email" name="email" autocomplete="email" required aria-describedby="imsouls-email-error">
+              <p class="imsouls-error" id="imsouls-email-error" hidden>Please enter a valid email address, like name@example.com.</p>
+            </div>
+
+            <div class="imsouls-field">
+              <label for="imsouls-phone">Phone <span class="imsouls-opt">(optional)</span></label>
+              <input type="tel" id="imsouls-phone" name="phone" autocomplete="tel">
+            </div>
+
+            <div class="imsouls-field">
+              <label for="imsouls-honor">Who would you like to honor? <span class="imsouls-opt">(optional)</span></label>
+              <input type="text" id="imsouls-honor" name="honoree" maxlength="120" placeholder="For example: my grandmother, Mae">
+            </div>
+
+            <div class="imsouls-check">
+              <input type="checkbox" id="imsouls-founding" name="founding_families" value="Yes">
+              <label for="imsouls-founding">Add me to the Founding Families list.</label>
+            </div>
+
+            <button class="btn imsouls-btn" type="submit">Request My Free Legacy Call</button>
+            <p class="imsouls-status" id="imsouls-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+
+        <div class="imsouls-thanks" id="imsouls-thanks" tabindex="-1" hidden>
+          <p class="imsouls-thanks-title">Thank you.</p>
+          <p>A member of our team will reach out personally within 2 business days.</p>
+        </div>
       </div>
+
+      <script>
+      (() => {
+        const section = document.getElementById("legacy");
+        const cta = document.getElementById("imsouls-cta");
+        const wrap = document.getElementById("imsouls-form-wrap");
+        const form = document.getElementById("imsouls-form");
+        const status = document.getElementById("imsouls-status");
+        const thanks = document.getElementById("imsouls-thanks");
+        if (!section || !cta || !wrap || !form) return;
+
+        // Booking link mode: if data-booking-url is set, the button opens it instead of the form.
+        const bookingUrl = (section.dataset.bookingUrl || "").trim();
+        if (bookingUrl) {
+          cta.addEventListener("click", () => window.open(bookingUrl, "_blank", "noopener"));
+          cta.removeAttribute("aria-controls");
+          cta.removeAttribute("aria-expanded");
+          return;
+        }
+
+        cta.addEventListener("click", () => {
+          const opening = wrap.hidden;
+          wrap.hidden = !opening;
+          cta.setAttribute("aria-expanded", String(opening));
+          if (opening) form.querySelector("#imsouls-name").focus();
+        });
+
+        const required = [
+          { input: form.querySelector("#imsouls-name"), error: form.querySelector("#imsouls-name-error") },
+          { input: form.querySelector("#imsouls-email"), error: form.querySelector("#imsouls-email-error") }
+        ];
+        const check = ({ input, error }) => {
+          const ok = input.checkValidity() && input.value.trim() !== "";
+          error.hidden = ok;
+          input.setAttribute("aria-invalid", String(!ok));
+          return ok;
+        };
+        required.forEach(f => {
+          f.input.addEventListener("blur", () => { if (f.input.value) check(f); });
+          f.input.addEventListener("input", () => { if (!f.error.hidden) check(f); });
+        });
+
+        form.addEventListener("submit", async event => {
+          event.preventDefault();
+          const results = required.map(check);
+          if (results.includes(false)) {
+            required[results.indexOf(false)].input.focus();
+            return;
+          }
+          if (form.action.includes("IMMOORTAL_FORM_ID")) {
+            status.textContent = "This form isn't connected yet. Please email starpower.collective@gmail.com and we'll reach out.";
+            return;
+          }
+          const button = form.querySelector('button[type="submit"]');
+          button.disabled = true;
+          status.textContent = "Sending…";
+          try {
+            const response = await fetch(form.action, {
+              method: "POST",
+              body: new FormData(form),
+              headers: { Accept: "application/json" }
+            });
+            if (!response.ok) throw new Error("HTTP " + response.status);
+            wrap.hidden = true;
+            cta.hidden = true;
+            section.querySelector(".imsouls-privacy").hidden = true;
+            thanks.hidden = false;
+            thanks.focus();
+          } catch (err) {
+            console.error("Immoortal Souls form failed:", err);
+            status.textContent = "Something went wrong and your request wasn't sent. Please try again, or email starpower.collective@gmail.com.";
+            button.disabled = false;
+          }
+        });
+      })();
+      </script>
     </section>
 
     <section class="shop section" id="shop" aria-labelledby="shop-title">

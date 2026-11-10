@@ -2146,3 +2146,127 @@ body { padding-bottom: 88px; }
 .wall-item { position: relative; }
 .wall-item.on-air img { outline: 3px solid var(--gold); outline-offset: 3px; }
 .wall-item.on-air::before { content: "ON AIR"; position: absolute; top: 8px; left: 8px; z-index: 1; background: #d7263d; color: #fff; font: 700 .65rem/1 var(--body); letter-spacing: .12em; padding: 5px 8px; border-radius: 3px; }
+
+/* ===== Immoortal Souls: introduction + Legacy Call ===== */
+#legacy.imsouls {
+  --im-green: #14301f;
+  --im-green-2: #1d4430;
+  --im-ivory: #f7f2e7;
+  --im-bronze: #d2ad6a;
+  background:
+    radial-gradient(circle at 85% 15%, rgba(210, 173, 106, .14), transparent 55%),
+    linear-gradient(180deg, var(--im-green), var(--im-green-2));
+  color: var(--im-ivory);
+  font-size: 1.125rem;
+  line-height: 1.75;
+}
+.imsouls-inner { max-width: 760px; margin: 0 auto; padding: 0 4px; }
+#legacy .imsouls-eyebrow { color: var(--im-bronze); letter-spacing: .2em; }
+.imsouls-title {
+  font-family: var(--heading);
+  font-weight: 600;
+  font-size: clamp(2.3rem, 6vw, 3.8rem);
+  line-height: 1.08;
+  color: var(--im-ivory);
+  margin: .25rem 0 .75rem;
+}
+.imsouls-title em { color: var(--im-bronze); font-style: italic; }
+.imsouls-brandline {
+  font-family: var(--heading);
+  font-size: 1.4rem;
+  color: var(--im-bronze);
+  margin: 0 0 1.75rem;
+}
+.imsouls-origin { margin: 0 0 2rem; max-width: 680px; }
+.imsouls-pillars { list-style: none; padding: 0; margin: 0 0 2rem; display: grid; gap: .9rem; }
+.imsouls-pillars li {
+  padding: .9rem 1.1rem;
+  border-left: 3px solid var(--im-bronze);
+  background: rgba(247, 242, 231, .06);
+  border-radius: 0 8px 8px 0;
+}
+.imsouls-pillars strong { color: var(--im-bronze); font-weight: 700; margin-right: .25rem; }
+.imsouls-founding {
+  border: 1px solid rgba(210, 173, 106, .45);
+  border-radius: 12px;
+  padding: 1.4rem 1.5rem;
+  margin: 0 0 1.5rem;
+}
+.imsouls-founding p { margin: 0 0 .6rem; }
+.imsouls-founding p:last-child { margin-bottom: 0; }
+.imsouls-founding-theme {
+  font-family: var(--heading);
+  font-size: 1.5rem;
+  line-height: 1.25;
+  color: var(--im-bronze);
+}
+.imsouls-gift { font-style: italic; opacity: .92; }
+.imsouls-trust { font-size: 1rem; margin: 0 0 2rem; opacity: .92; }
+.imsouls-cta { margin-bottom: 1.5rem; }
+.imsouls-btn {
+  background: var(--im-bronze);
+  color: var(--im-green);
+  border: 2px solid var(--im-bronze);
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 1rem 1.75rem;
+  min-height: 52px;
+  cursor: pointer;
+  transition: background .2s ease, color .2s ease;
+}
+.imsouls-btn:hover { background: var(--im-ivory); border-color: var(--im-ivory); color: var(--im-green); }
+.imsouls-btn:focus-visible,
+.imsouls-form input:focus-visible { outline: 3px solid var(--im-ivory); outline-offset: 3px; }
+.imsouls-privacy { font-size: .95rem; margin: .75rem 0 0; opacity: .85; }
+
+.imsouls-form-wrap { margin-top: 1rem; }
+.imsouls-form {
+  background: var(--im-ivory);
+  color: var(--im-green);
+  border-radius: 14px;
+  padding: 1.75rem 1.5rem;
+  display: grid;
+  gap: 1.1rem;
+}
+.imsouls-form-intro { margin: 0; font-weight: 600; }
+.imsouls-field label,
+.imsouls-check label { display: block; font-weight: 600; margin-bottom: .35rem; }
+.imsouls-req, .imsouls-opt { font-weight: 400; font-size: .9rem; color: #4b5d51; }
+.imsouls-form input[type="text"],
+.imsouls-form input[type="email"],
+.imsouls-form input[type="tel"] {
+  width: 100%;
+  font: inherit;
+  font-size: 1.1rem;
+  padding: .8rem .9rem;
+  border: 2px solid #8a9a8f;
+  border-radius: 8px;
+  background: #fff;
+  color: #10241a;
+}
+.imsouls-form input[aria-invalid="true"] { border-color: #a12a2a; }
+.imsouls-error { margin: .35rem 0 0; color: #a12a2a; font-weight: 600; font-size: 1rem; }
+.imsouls-check { display: flex; align-items: flex-start; gap: .7rem; }
+.imsouls-check input { width: 22px; height: 22px; margin-top: .25rem; accent-color: var(--im-green-2); flex: none; }
+.imsouls-check label { margin: 0; }
+.imsouls-form .imsouls-btn { justify-self: start; }
+.imsouls-form .imsouls-btn:hover { background: var(--im-green); color: var(--im-ivory); border-color: var(--im-green); }
+.imsouls-status { margin: 0; font-weight: 600; min-height: 1.5em; }
+.imsouls-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+.imsouls-thanks {
+  background: rgba(247, 242, 231, .08);
+  border: 1px solid var(--im-bronze);
+  border-radius: 14px;
+  padding: 1.75rem 1.5rem;
+  margin-top: 1rem;
+}
+.imsouls-thanks:focus { outline: none; }
+.imsouls-thanks p { margin: 0; }
+.imsouls-thanks-title { font-family: var(--heading); font-size: 2rem; color: var(--im-bronze); margin-bottom: .4rem !important; }
+
+@media (min-width: 720px) {
+  .imsouls-pillars { grid-template-columns: repeat(3, 1fr); }
+  .imsouls-form { padding: 2rem; }
+}
+@media (prefers-reduced-motion: reduce) { .imsouls-btn { transition: none; } }
