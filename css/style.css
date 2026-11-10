@@ -2270,3 +2270,9 @@ body { padding-bottom: 88px; }
   .imsouls-form { padding: 2rem; }
 }
 @media (prefers-reduced-motion: reduce) { .imsouls-btn { transition: none; } }
+
+/* Shop: featured coming-soon tee */
+.shop-grid { max-width: 1100px; }
+.shop-card--feature { position: relative; opacity: 1; }
+.shop-card-img { display: block; width: 100%; height: auto; border-radius: 10px; margin-bottom: 1rem; background: #000; }
+.shop-badge { position: absolute; top: 1rem; left: 1rem; z-index: 1; background: var(--gold); color: var(--navy); font-size: .7rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; padding: .35rem .7rem; border-radius: 999px; }
