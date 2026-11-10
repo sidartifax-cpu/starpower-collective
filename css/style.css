@@ -2276,3 +2276,28 @@ body { padding-bottom: 88px; }
 .shop-card--feature { position: relative; opacity: 1; }
 .shop-card-img { display: block; width: 100%; height: auto; border-radius: 10px; margin-bottom: 1rem; background: #000; }
 .shop-badge { position: absolute; top: 1rem; left: 1rem; z-index: 1; background: var(--gold); color: var(--navy); font-size: .7rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; padding: .35rem .7rem; border-radius: 999px; }
+
+/* ===== Desktop refinements: compact floating radio player + smaller tee image ===== */
+@media (min-width: 900px) {
+  .np-bar {
+    left: 50%;
+    right: auto;
+    bottom: 16px;
+    transform: translateX(-50%);
+    width: min(680px, calc(100vw - 48px));
+    border: 1px solid rgba(245, 228, 0, .45);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  .np-main { min-height: 64px; padding: 8px 14px; gap: 12px; }
+  .np-play { width: 46px; height: 46px; }
+  .np-play svg { width: 22px; height: 22px; }
+  .np-art { width: 48px; height: 48px; }
+  .np-title { font-size: 1.1rem; }
+  .np-volume { width: 90px; }
+  .np-panel { max-height: 40vh; }
+  body { padding-bottom: 100px; }
+}
+@media (min-width: 720px) {
+  .shop-card--feature .shop-card-img { max-width: 240px; margin-left: auto; margin-right: auto; }
+}
