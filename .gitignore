@@ -1,6 +1,8 @@
-   .DS_Store
-   ._*
-   *.psd
-   *.ai
-   *.wav
-   *.mov
+.DS_Store
+._*
+*.psd
+*.ai
+*.wav
+*.mov
+.smbdelete*
+**/.DS_Store

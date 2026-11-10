@@ -2053,3 +2053,38 @@ section[id] { scroll-margin-top: 110px; }
 
 .founders-credit { max-width: 680px; margin: 0 auto 1.5rem; font-style: italic; }
 .founders-footer { font-size: .8rem; letter-spacing: .06em; opacity: .75; text-align: center; margin: 1rem 0 0; }
+
+/* ===== Our Story: dark theme fix ===== */
+#story { background: var(--navy); color: var(--ivory); }
+#story .story-title { color: var(--ivory); }
+#story .story-title em,
+#story .eyebrow,
+#story .story-start-label,
+#story .story-quote { color: var(--gold); }
+#story .story-origin-copy p { color: var(--ivory); opacity: .9; }
+#story .btn-outline { color: var(--ivory); border-color: var(--ivory); }
+#story .story-origin-image img { filter: drop-shadow(0 8px 24px rgba(245, 228, 0, .25)); background: none; }
+#story .story-origin-copy .story-start-label { color: var(--gold); opacity: 1; }
+
+/* Founders: 2 columns on desktop so bios read comfortably */
+@media (min-width: 1024px) { .founders-grid { grid-template-columns: repeat(2, 1fr); max-width: 1000px; } }
+.founders-bio { text-align: left; }
+
+/* ===== The StarPower Wall ===== */
+.wall { background: var(--navy); color: var(--ivory); text-align: center; }
+.wall .eyebrow { color: var(--gold); }
+.wall-title { font-family: var(--heading); color: var(--ivory); font-size: clamp(2.2rem, 5vw, 3.6rem); line-height: 1.1; margin: 0 0 1rem; }
+.wall-title em { color: var(--gold); font-style: italic; }
+.wall-intro { max-width: 640px; margin: 0 auto 2.5rem; line-height: 1.7; opacity: .9; }
+.wall-grid { list-style: none; padding: 0; margin: 0 auto; max-width: 1200px; display: grid; gap: 1rem; grid-template-columns: repeat(2, 1fr); }
+@media (min-width: 600px)  { .wall-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 900px)  { .wall-grid { grid-template-columns: repeat(4, 1fr); } }
+@media (min-width: 1200px) { .wall-grid { grid-template-columns: repeat(5, 1fr); } }
+.wall-item { display: flex; flex-direction: column; gap: .5rem; }
+.wall-item img { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 6px; box-shadow: 0 6px 18px rgba(0, 0, 0, .45); transition: transform .25s ease, box-shadow .25s ease; }
+.wall-item:hover img { transform: translateY(-4px); box-shadow: 0 10px 24px rgba(245, 228, 0, .18); }
+.wall-name { font-size: .85rem; color: var(--ivory); opacity: .85; }
+@media (prefers-reduced-motion: reduce) { .wall-item img { transition: none; } .wall-item:hover img { transform: none; } }
+.wall-link { text-align: center; margin-top: 2.5rem; }
+.wall-link .btn-gold, .wall-link .btn-gold:hover { color: var(--navy); }
+#interviews .wall-link a.btn-gold { color: var(--navy); }
