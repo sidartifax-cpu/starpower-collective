@@ -18,56 +18,7 @@ navigation?.querySelectorAll("a").forEach(link => {
 
 document.querySelector("#year").textContent = new Date().getFullYear();
 
-// Keep live radio playback on the page with native audio controls.
-(() => {
-  const player = document.querySelector("#radio-player");
-  const audio = document.querySelector("#radio-stream");
-  const status = document.querySelector("#radio-player-status");
-  const closeButton = document.querySelector(".radio-player-close");
-  if (!player || !audio || !status || !closeButton) return;
-
-  let playbackAttempt = 0;
-  document.querySelectorAll("[data-radio-play]").forEach(button => {
-    button.addEventListener("click", async () => {
-      const attempt = ++playbackAttempt;
-      player.hidden = false;
-      status.textContent = "Connecting to Nu Soul Highway Radio…";
-
-      try {
-        await audio.play();
-        if (attempt === playbackAttempt) {
-          status.textContent = "You are listening to Nu Soul Highway Radio.";
-        }
-      } catch (error) {
-        if (attempt !== playbackAttempt) return;
-        console.error("Could not start the live radio stream:", error);
-        status.textContent =
-          "Playback could not start here. Use the player controls or open the stream directly.";
-      }
-    });
-  });
-
-  audio.addEventListener("playing", () => {
-    status.textContent = "You are listening to Nu Soul Highway Radio.";
-  });
-  audio.addEventListener("waiting", () => {
-    status.textContent = "Connecting to Nu Soul Highway Radio…";
-  });
-  audio.addEventListener("pause", () => {
-    if (!audio.ended) status.textContent = "Radio playback is paused.";
-  });
-  audio.addEventListener("error", () => {
-    status.textContent =
-      "The live stream is unavailable right now. Try again or open the stream directly.";
-  });
-
-  closeButton.addEventListener("click", () => {
-    playbackAttempt += 1;
-    audio.pause();
-    player.hidden = true;
-    document.querySelector("[data-radio-play]")?.focus();
-  });
-})();
+// Live radio playback now lives in js/radio-player.js
 
 // STARPOWER ROTATING INTERVIEWEE PORTRAITS
 

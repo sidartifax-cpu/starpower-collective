@@ -2097,3 +2097,52 @@ section[id] { scroll-margin-top: 110px; }
 .footer-contact { font-size: .9rem; margin: 1rem 0 0; text-align: center; }
 .footer-contact a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; word-break: break-word; }
 .footer-contact a:hover, .footer-contact a:focus-visible { color: var(--ivory); }
+
+
+/* ===== Nu Soul Hwy Radio — sticky Now Playing bar ===== */
+body { padding-bottom: 88px; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.np-bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 130; background: #0d1224; border-top: 1px solid rgba(245, 228, 0, .45); box-shadow: 0 -8px 30px rgba(0, 0, 0, .45); color: var(--ivory); font-family: var(--body); }
+.np-main { max-width: 1200px; margin: 0 auto; padding: 10px 16px; display: flex; align-items: center; gap: 14px; min-height: 76px; }
+.np-play { flex: none; width: 52px; height: 52px; border-radius: 50%; border: 0; background: var(--gold); color: var(--navy); display: grid; place-items: center; cursor: pointer; transition: transform .15s ease; }
+.np-play:hover { transform: scale(1.06); }
+.np-play svg { width: 26px; height: 26px; fill: currentColor; }
+.np-icon-pause, .np-bar.is-playing .np-icon-play { display: none; }
+.np-bar.is-playing .np-icon-pause { display: block; }
+.np-art { flex: none; width: 56px; height: 56px; border-radius: 6px; object-fit: cover; background: var(--royal); }
+.np-info { flex: 1; min-width: 0; }
+.np-info p { margin: 0; }
+.np-meta { display: flex; align-items: center; gap: 8px; }
+.np-badge { font-size: .65rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); }
+.np-badge.is-live { background: #d7263d; color: #fff; padding: 2px 8px; border-radius: 3px; }
+.np-title { font-family: var(--heading); font-size: 1.25rem; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.np-sub { font-size: .78rem; opacity: .75; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.np-eq { display: none; gap: 2px; align-items: flex-end; height: 12px; }
+.np-eq i { width: 3px; height: 4px; background: var(--gold); animation: np-eq 0.9s ease-in-out infinite; }
+.np-eq i:nth-child(2) { animation-delay: .2s; } .np-eq i:nth-child(3) { animation-delay: .4s; }
+.np-bar.is-playing .np-eq { display: inline-flex; }
+@keyframes np-eq { 0%, 100% { height: 4px; } 50% { height: 12px; } }
+.np-vol-wrap { flex: none; display: flex; align-items: center; }
+.np-volume { width: 110px; accent-color: var(--gold); }
+.np-toggle { flex: none; background: transparent; color: var(--ivory); border: 1px solid rgba(245, 240, 232, .4); border-radius: 999px; padding: 8px 14px; font: 600 .75rem var(--body); letter-spacing: .08em; text-transform: uppercase; cursor: pointer; }
+.np-toggle:hover { border-color: var(--gold); color: var(--gold); }
+.np-panel { max-width: 1200px; margin: 0 auto; padding: 16px 16px 4px; border-bottom: 1px solid rgba(245, 240, 232, .12); max-height: 50vh; overflow-y: auto; }
+.np-panel-label { margin: 0 0 .35rem; font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); }
+.np-next { margin: 0 0 1rem; font-weight: 600; }
+.np-history { margin: 0 0 1rem; padding-left: 1.25rem; font-size: .9rem; line-height: 1.7; opacity: .85; }
+.np-direct { display: inline-block; margin-bottom: 12px; font-size: .8rem; color: var(--gold); }
+.np-bar.is-offline .np-badge { color: #9aa3b8; }
+.np-bar button:focus-visible, .np-bar a:focus-visible, .np-volume:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+@media (max-width: 700px) {
+  .np-vol-wrap { display: none; }
+  .np-main { gap: 10px; padding: 8px 12px; }
+  .np-art { width: 48px; height: 48px; }
+  .np-title { font-size: 1.05rem; }
+  .np-toggle { padding: 7px 10px; }
+}
+@media (prefers-reduced-motion: reduce) { .np-eq i { animation: none; height: 8px; } .np-play { transition: none; } }
+
+/* Wall: highlight the guest currently on air */
+.wall-item { position: relative; }
+.wall-item.on-air img { outline: 3px solid var(--gold); outline-offset: 3px; }
+.wall-item.on-air::before { content: "ON AIR"; position: absolute; top: 8px; left: 8px; z-index: 1; background: #d7263d; color: #fff; font: 700 .65rem/1 var(--body); letter-spacing: .12em; padding: 5px 8px; border-radius: 3px; }

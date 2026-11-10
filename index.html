@@ -915,26 +915,34 @@
     <p class="footer-contact">Contact us: <a href="mailto:starpower.collective@gmail.com">starpower.collective@gmail.com</a> · <a href="tel:+16784660560">(678) 466-0560</a></p>
     <p class="footer-credit">Site designed and powered by <a href="https://moorgraphix.com" target="_blank" rel="noopener">Moor Graphix</a></p>
   </footer>
-  <aside class="radio-player" id="radio-player" aria-label="Nu Soul Highway Radio player" hidden>
-    <div class="radio-player-heading">
-      <div>
-        <p class="eyebrow">LISTEN LIVE</p>
-        <h2>Nu Soul Highway Radio</h2>
-      </div>
-      <button class="radio-player-close" type="button" aria-label="Close radio player">×</button>
+  <aside class="np-bar" id="np-bar" aria-label="Nu Soul Hwy Radio player">
+    <div class="np-panel" id="np-panel" hidden>
+      <p class="np-panel-label">Up next</p>
+      <p class="np-next">Loading…</p>
+      <p class="np-panel-label">Recently played</p>
+      <ol class="np-history"></ol>
+      <a class="np-direct" href="https://streamer.radio.co/s8dd253f7b/listen" target="_blank" rel="noopener">Open the stream in a new tab</a>
     </div>
-    <audio id="radio-stream" controls preload="none">
-      <source src="https://streamer.radio.co/s8dd253f7b/listen" type="audio/mpeg">
-      Your browser does not support embedded audio.
-    </audio>
-    <p class="radio-player-status" id="radio-player-status" aria-live="polite">
-      Press play to listen live.
-    </p>
-    <a class="radio-player-fallback" href="https://streamer.radio.co/s8dd253f7b/listen" target="_blank" rel="noopener noreferrer">
-      Open the stream directly
-    </a>
+    <div class="np-main">
+      <button class="np-play" type="button" aria-pressed="false" aria-label="Play Nu Soul Hwy Radio">
+        <svg class="np-icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        <svg class="np-icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+      </button>
+      <img class="np-art" src="images/star-power-logo.png" alt="Nu Soul Hwy Radio logo" width="56" height="56">
+      <div class="np-info">
+        <p class="np-meta"><span class="np-badge">On Rotation</span><span class="np-eq" aria-hidden="true"><i></i><i></i><i></i></span></p>
+        <p class="np-title">Nu Soul Hwy Radio</p>
+        <p class="np-sub">Loading what's playing…</p>
+      </div>
+      <label class="np-vol-wrap"><span class="sr-only">Volume</span>
+        <input class="np-volume" type="range" min="0" max="1" step="0.05" value="0.9">
+      </label>
+      <button class="np-toggle" type="button" aria-expanded="false" aria-controls="np-panel">Up next</button>
+    </div>
+    <p class="np-status sr-only" aria-live="polite"></p>
   </aside>
 <script src="js/curated-gallery.js" defer></script>
 <script src="js/shopify-buy-button.js" defer></script>
+<script src="js/radio-player.js" defer></script>
 </body>
 </html>
