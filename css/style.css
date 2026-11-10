@@ -2093,3 +2093,7 @@ section[id] { scroll-margin-top: 110px; }
 .footer-credit { font-size: .8rem; margin: .75rem 0 0; opacity: .85; text-align: center; }
 .footer-credit a { color: var(--gold); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
 .footer-credit a:hover, .footer-credit a:focus-visible { color: var(--ivory); }
+
+.footer-contact { font-size: .9rem; margin: 1rem 0 0; text-align: center; }
+.footer-contact a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; word-break: break-word; }
+.footer-contact a:hover, .footer-contact a:focus-visible { color: var(--ivory); }
