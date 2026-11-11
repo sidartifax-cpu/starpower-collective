@@ -31,6 +31,9 @@
 - [Josh Milan](https://starpowercollective.com/interviews/josh-milan/): Josh Milan on Fort Greene block parties, gospel at home and why he hears music as the voice of God.
 - [Boyd Jarvis](https://starpowercollective.com/interviews/boyd-jarvis/): Producer Boyd Jarvis on Crown Heights Affair, a Boston community center that sparked his love of fusion jazz, and making "The Music Got Me."
 
+## Full text
+- [llms-full.txt](https://starpowercollective.com/llms-full.txt): complete text of every interview page
+
 ## Elsewhere
 - YouTube: https://www.youtube.com/@StarPowerCollective
 - YouTube (second channel): https://www.youtube.com/@starpowercollective9960
