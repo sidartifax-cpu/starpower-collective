@@ -2522,3 +2522,8 @@ body { padding-bottom: 88px; }
 .founders-grid > .founders-card:nth-child(5) { animation-delay: -4.8s; }
 .founders-grid > .founders-card:hover { animation-play-state: paused; box-shadow: 0 20px 40px rgba(0, 0, 0, .45), 0 0 0 1px rgba(245, 228, 0, .45); }
 @media (prefers-reduced-motion: reduce) { .founders-grid > .founders-card { animation: none; } }
+
+/* Immoortal Souls: tighter top, smaller floating logo */
+#legacy.imsouls { padding-top: 48px; }
+.imsouls-float { width: min(260px, calc(50% - 440px)); left: max(3%, calc(50% - 380px - 330px)); }
+@media (max-width: 1199px) { .imsouls-float { left: -6%; width: min(360px, 55vw); } }
