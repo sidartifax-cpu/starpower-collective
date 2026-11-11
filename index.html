@@ -1212,6 +1212,9 @@
          (for example data-booking-url="https://calendly.com/your-link"). Leave it empty to use the form. -->
     <section class="legacy section imsouls" id="legacy" aria-labelledby="imsouls-title"
              data-booking-url="">
+      <div class="imsouls-float" aria-hidden="true">
+        <img src="images/is-logo.png" alt="" width="792" height="612" loading="lazy" decoding="async">
+      </div>
       <div class="imsouls-inner">
         <p class="eyebrow imsouls-eyebrow">INTRODUCING IMMOORTAL SOULS</p>
         <h2 class="imsouls-title" id="imsouls-title">Give Them Their Flowers<br><em>While They're Here.</em></h2>
@@ -1371,6 +1374,27 @@
       })();
       </script>
     </section>
+    <script>
+    (() => {
+      const sec = document.querySelector("#legacy.imsouls");
+      const logo = sec && sec.querySelector(".imsouls-float img");
+      if (!logo) return;
+      const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+      let ticking = false;
+      const move = () => {
+        const r = (sec.querySelector(".imsouls-inner") || sec).getBoundingClientRect();
+        const k = Math.max(-1.2, Math.min(1.2, (r.top + r.height / 2 - innerHeight / 2) / (innerHeight / 2 + r.height / 2)));
+        const show = Math.max(0, Math.min(1, 1.35 - Math.abs(k) * 1.6));
+        logo.style.opacity = show.toFixed(3);
+        if (!still) logo.style.transform = `translate3d(${((1 - show) * -40).toFixed(1)}px, ${(k * 120).toFixed(1)}px, 0) rotate(${(k * -4).toFixed(2)}deg)`;
+        ticking = false;
+      };
+      addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(move); } }, { passive: true });
+      addEventListener("resize", move);
+      move();
+    })();
+    </script>
+
 
     <section class="shop section" id="shop" aria-labelledby="shop-title">
       <p class="eyebrow">WEAR YOUR STARPOWER</p>
