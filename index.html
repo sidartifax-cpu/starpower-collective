@@ -1126,13 +1126,13 @@
           <button class="btn imsouls-btn" type="button" id="imsouls-cta" aria-expanded="false" aria-controls="imsouls-form-wrap">
             Request a Free Legacy Call
           </button>
-          <p class="imsouls-privacy">We'll only use this to contact you about Immoortal Souls.</p>
+          <p class="imsouls-privacy">We'll only use this to contact you about Immoortal Souls. <a href="privacy/">Privacy policy</a></p>
         </div>
 
         <div class="imsouls-form-wrap" id="imsouls-form-wrap" hidden>
-          <!-- PASTE YOUR FORMSPREE ID: replace IMMOORTAL_FORM_ID in the action below with your real form ID
-               (for example https://formspree.io/f/abcdwxyz). -->
-          <form class="imsouls-form" id="imsouls-form" action="https://formspree.io/f/IMMOORTAL_FORM_ID" method="POST" novalidate>
+          <!-- Legacy Call requests go to the same Formspree account as guest applications, labeled "source: Immoortal Souls".
+               To send them to a separate Formspree form later, replace the address in action="" below. -->
+          <form class="imsouls-form" id="imsouls-form" action="https://formspree.io/f/xjyynkyo" method="POST" novalidate>
             <p class="imsouls-form-intro">A free 15-minute call. No pressure, just a conversation.</p>
 
             <input type="hidden" name="source" value="Immoortal Souls">
@@ -1371,6 +1371,29 @@
     </section>
   </main>
 
+  <section class="signup-band" aria-labelledby="signup-title">
+    <div class="signup-inner">
+      <p class="eyebrow">STAY IN THE VILLAGE</p>
+      <h2 id="signup-title">Get New Interviews <em>in Your Inbox</em></h2>
+      <p class="signup-lead">New StarPower interviews, guest stories and merch drops. A few emails a month, never spam.</p>
+      <!-- Signups go to the same Formspree account as guest applications, labeled "Newsletter Signup".
+           To use a separate list later, replace the address in action="" with your new Formspree form. -->
+      <form class="signup-form" action="https://formspree.io/f/xjyynkyo" method="POST" novalidate>
+        <input type="hidden" name="source" value="Newsletter">
+        <input type="hidden" name="_subject" value="Newsletter Signup: StarPower Collective">
+        <div class="signup-hp" aria-hidden="true"><label>Leave empty <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+        <div class="signup-fields">
+          <label class="signup-label" for="home-name">First name <span>(optional)</span></label>
+          <input id="home-name" type="text" name="first_name" autocomplete="given-name">
+          <label class="signup-label" for="home-email">Email <span>(required)</span></label>
+          <input id="home-email" type="email" name="email" autocomplete="email" required>
+          <button class="btn btn-gold" type="submit">Sign Me Up</button>
+        </div>
+        <p class="signup-status" role="status" aria-live="polite"></p>
+        <p class="signup-privacy">We'll only email you about StarPower Collective. Unsubscribe anytime. <a href="privacy/">Privacy policy</a></p>
+      </form>
+    </div>
+  </section>
   <footer class="footer">
     <a class="footer-logo" href="#home" aria-label="StarPower Collective home">
       <img src="images/starpower-logo-footer.png" alt="The StarPower Collective logo" width="480" height="264" loading="lazy">
@@ -1384,6 +1407,7 @@
       <a href="https://www.instagram.com/starpower.collective_inc/" target="_blank" rel="noopener">Instagram</a> ·
       <a href="https://www.facebook.com/starpower.collective" target="_blank" rel="noopener">Facebook</a>
     </p>
+    <p class="footer-legal"><a href="privacy/">Privacy Policy</a></p>
     <p class="footer-credit">Site designed and powered by <a href="https://moorgraphix.com" target="_blank" rel="noopener">Moor Graphix</a></p>
   </footer>
   <aside class="np-bar" id="np-bar" aria-label="Nu Soul Hwy Radio player">
@@ -1415,5 +1439,6 @@
 <script src="js/curated-gallery.js" defer></script>
 <script src="js/shopify-buy-button.js" defer></script>
 <script src="js/radio-player.js" defer></script>
+<script src="js/site-extras.js" defer></script>
 </body>
 </html>
