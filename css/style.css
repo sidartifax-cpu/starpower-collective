@@ -2318,3 +2318,9 @@ body { padding-bottom: 88px; }
 .faq-item summary:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 12px; }
 .footer-social { font-size: .9rem; margin: .75rem 0 0; text-align: center; }
 .footer-social a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
+
+/* Wall covers that link to interview pages: look identical, just clickable */
+.wall-link-page { display: flex; flex-direction: column; gap: .5rem; color: inherit; text-decoration: none; }
+.wall-link-page:hover .wall-name, .wall-link-page:focus-visible .wall-name { color: var(--gold); }
+.wall-link-page:focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; border-radius: 6px; }
+#interviews .wall-link a.btn-outline { color: var(--ivory); border-color: var(--ivory); margin-left: .5rem; }

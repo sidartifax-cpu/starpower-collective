@@ -7,7 +7,7 @@
   const STREAM = `https://streamer.radio.co/${STATION}/listen`;
   const API = `https://public.radio.co/stations/${STATION}`;
   const STATION_NAME = "Nu Soul Hwy Radio";
-  const FALLBACK_ART = "images/star-power-logo.png";
+  const FALLBACK_ART = "/images/star-power-logo.png";
   const POLL_MS = 30000;
 
   const bar = document.querySelector("#np-bar");
