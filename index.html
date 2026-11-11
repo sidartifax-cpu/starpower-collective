@@ -451,6 +451,61 @@
       </div>
     </section>
 
+    <section class="video-band" aria-label="StarPower Collective intro video">
+      <video class="video-band-media" muted loop playsinline preload="none" aria-hidden="true"
+        poster="images/starpower-intro-poster.jpg">
+        <source src="video/starpower-intro.webm" type="video/webm">
+        <source src="video/starpower-intro.mp4" type="video/mp4">
+      </video>
+      <button class="video-band-toggle" type="button" aria-label="Pause background video">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path class="vb-pause" d="M7 5h4v14H7zM13 5h4v14h-4z"/><path class="vb-play" d="M8 5v14l11-7z"/></svg>
+      </button>
+    </section>
+    <script>
+    (() => {
+      const band = document.querySelector(".video-band");
+      if (!band) return;
+      const video = band.querySelector("video");
+      const btn = band.querySelector(".video-band-toggle");
+      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      let userPaused = reduce, visible = false;
+
+      const setBtn = () => {
+        const paused = video.paused;
+        band.classList.toggle("is-paused", paused);
+        btn.setAttribute("aria-label", paused ? "Play background video" : "Pause background video");
+      };
+      const tryPlay = () => { if (visible && !userPaused) video.play().catch(() => {}).finally(setBtn); };
+
+      new IntersectionObserver(([e]) => {
+        visible = e.isIntersecting;
+        if (visible) { if (video.preload === "none") { video.preload = "auto"; video.load(); } tryPlay(); }
+        else { video.pause(); setBtn(); }
+      }, { rootMargin: "200px 0px" }).observe(band);
+
+      btn.addEventListener("click", () => {
+        userPaused = !video.paused;
+        if (userPaused) video.pause(); else { userPaused = false; video.play().catch(() => {}); }
+        setTimeout(setBtn, 50);
+      });
+      video.addEventListener("play", setBtn);
+      video.addEventListener("pause", setBtn);
+      setBtn();
+
+      if (reduce) return;
+      let ticking = false;
+      const move = () => {
+        const r = band.getBoundingClientRect();
+        const progress = (r.top + r.height / 2 - innerHeight / 2) / (innerHeight / 2 + r.height / 2);
+        video.style.transform = `translate3d(0, ${(progress * -12).toFixed(2)}%, 0)`;
+        ticking = false;
+      };
+      addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(move); } }, { passive: true });
+      addEventListener("resize", move);
+      move();
+    })();
+    </script>
+
     <section class="network section" id="shows">
       <p class="eyebrow">THE STARPOWER NETWORK</p>
       <h2>Many Voices.<br><em>One Village.</em></h2>
