@@ -350,6 +350,25 @@
         </div>
       </div>
 
+      <script>
+      (() => {
+        const wrap = document.querySelector("#story .story-origin");
+        const img = wrap && wrap.querySelector(".story-origin-image img");
+        if (!img || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        let ticking = false;
+        const move = () => {
+          const r = wrap.getBoundingClientRect();
+          const p = (r.top + r.height / 2 - innerHeight / 2) / (innerHeight / 2 + r.height / 2);
+          const k = Math.max(-1, Math.min(1, p));
+          img.style.transform = `translate3d(${(k * -3).toFixed(2)}%, ${(k * 14).toFixed(2)}%, 0) scale(${(1.04 - Math.abs(k) * .04).toFixed(3)})`;
+          ticking = false;
+        };
+        addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(move); } }, { passive: true });
+        addEventListener("resize", move);
+        move();
+      })();
+      </script>
+
       <div class="story-actions">
         <a class="btn btn-gold" href="#be-a-guest">Be a Guest</a>
         <a class="btn btn-outline" href="#interviews">Watch the Interviews</a>
