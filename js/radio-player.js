@@ -32,6 +32,7 @@
   let wantPlaying = false;
   let lastTitle = "";
   let stationArt = "";
+  let nowSharing = { parsed: { show: STATION_NAME, guest: "" }, link: "" };
 
   // ---------- title cleanup ----------
   const SMALL = new Set(["a", "an", "and", "of", "the", "to", "in", "on", "for"]);
@@ -110,6 +111,7 @@
     el.sub.textContent = parsed.guest ? `${parsed.show} · ${STATION_NAME}` : STATION_NAME;
 
     const art = pickArt(parsed, data?.current_track?.artwork_url_large);
+    nowSharing = { parsed, link: art.match?.li.querySelector("a[href]")?.href || "" };
     setArt(art.src);
     el.art.alt = parsed.guest ? `Now playing: ${parsed.guest}` : `${STATION_NAME} logo`;
     markOnAir(art.match);
@@ -249,6 +251,82 @@
   document.addEventListener("keydown", e => {
     if (e.key === "Escape" && !el.panel.hidden) el.toggle.click();
   });
+
+  // ---------- share what's playing ----------
+  const SITE = "https://starpowercollective.com/";
+  const shareBtn = document.createElement("button");
+  shareBtn.type = "button";
+  shareBtn.className = "np-share";
+  shareBtn.setAttribute("aria-haspopup", "true");
+  shareBtn.setAttribute("aria-expanded", "false");
+  shareBtn.setAttribute("aria-label", "Share what's playing");
+  shareBtn.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 16a3 3 0 0 0-2.4 1.2l-6.7-3.4a3 3 0 0 0 0-1.6l6.7-3.4A3 3 0 1 0 15 7l-6.7 3.4a3 3 0 1 0 0 3.2L15 17a3 3 0 1 0 3-1z"/></svg><span>Share</span>';
+  el.toggle.before(shareBtn);
+
+  const pop = document.createElement("div");
+  pop.className = "np-share-pop";
+  pop.hidden = true;
+  pop.setAttribute("role", "dialog");
+  pop.setAttribute("aria-label", "Share what's playing");
+  bar.appendChild(pop);
+
+  function shareInfo() {
+    const p = nowSharing.parsed;
+    const url = nowSharing.link || SITE;
+    const what = p.guest ? `${p.guest} on ${p.show}` : STATION_NAME;
+    const text = p.guest
+      ? `I'm listening to ${what}, live on ${STATION_NAME}. Tune in:`
+      : `I'm listening to ${STATION_NAME} from StarPower Collective. Tune in:`;
+    return { url, text, what };
+  }
+
+  const ICON = {
+    facebook: 'M14 8h3V4h-3c-2.8 0-4.5 1.8-4.5 4.6V11H7v4h2.5v9h4v-9h3l.5-4h-3.5V8.9c0-.6.3-.9 1-.9z',
+    x: 'M17.8 3h3.3l-7.2 8.2L22.4 21h-6.6l-5.2-6.8L4.6 21H1.3l7.7-8.8L1 3h6.8l4.7 6.2L17.8 3zm-1.2 16h1.8L6.5 4.9H4.6L16.6 19z',
+    whatsapp: 'M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z',
+    threads: 'M12.1 1.5C8.9 1.5 6.4 2.6 4.8 4.7 3.3 6.5 2.6 9.1 2.6 12.3s.7 5.7 2.2 7.6c1.6 2 4.1 3.1 7.3 3.1 2.9 0 4.9-.8 6.6-2.4 2.2-2.2 2.1-4.9 1.4-6.6-.5-1.2-1.6-2.3-3.4-2.9-.2-3-1.8-4.7-4.6-4.7-1.7 0-3.1.7-3.9 2l1.5 1c.6-.9 1.6-1.1 2.4-1.1 1.5 0 2.6.8 2.8 2.6-.8-.1-1.7-.2-2.6-.1-2.6.1-4.3 1.7-4.2 3.8.1 2.1 2 3.4 4.4 3.3 2.9-.2 4.3-2.3 4.4-4.6.7.4 1.2.9 1.4 1.6.5 1.1.5 3-1 4.5-1.3 1.3-2.9 1.9-5.3 1.9-2.6 0-4.6-.9-5.9-2.5C5 17.2 4.4 15 4.4 12.3s.6-4.9 1.8-6.4C7.5 4.3 9.5 3.4 12.1 3.4c2.6 0 4.7.9 6 2.5.7.8 1.2 1.8 1.5 2.9l1.8-.5c-.4-1.5-1-2.7-1.9-3.7C17.9 2.6 15.4 1.5 12.1 1.5zm.6 12.7c.8 0 1.4.1 2 .2-.2 2.4-1.4 3-2.6 3.1-1.2.1-2.4-.5-2.5-1.5 0-.8.5-1.7 2.5-1.8h.6z',
+    email: 'M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm9 7.2L4 7.3V17h16V7.3l-8 4.9zM4.6 7l7.4 4.6L19.4 7H4.6z',
+    link: 'M10.6 13.4a1 1 0 0 1 0-1.4l3.3-3.3a1 1 0 1 1 1.4 1.4L12 13.4a1 1 0 0 1-1.4 0zM8.5 19.5a4.2 4.2 0 0 1-3-7.1l2.4-2.4a1 1 0 0 1 1.4 1.4l-2.4 2.4a2.2 2.2 0 0 0 3.1 3.1l2.4-2.4a1 1 0 0 1 1.4 1.4l-2.4 2.4c-.8.8-1.9 1.2-2.9 1.2zm7-5.1a1 1 0 0 1-.7-1.7l2.4-2.4a2.2 2.2 0 0 0-3.1-3.1l-2.4 2.4a1 1 0 0 1-1.4-1.4l2.4-2.4a4.2 4.2 0 0 1 5.9 5.9l-2.4 2.4c-.2.2-.5.3-.7.3z'
+  };
+  const svg = k => `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="${ICON[k]}"/></svg>`;
+
+  function buildPop() {
+    const { url, text, what } = shareInfo();
+    const u = encodeURIComponent(url), t = encodeURIComponent(text);
+    const links = [
+      ["facebook", "Facebook", `https://www.facebook.com/sharer/sharer.php?u=${u}&quote=${t}`],
+      ["x", "X", `https://twitter.com/intent/tweet?text=${t}&url=${u}&hashtags=doyouhavestarpower`],
+      ["threads", "Threads", `https://www.threads.net/intent/post?text=${encodeURIComponent(text + " " + url)}`],
+      ["whatsapp", "WhatsApp", `https://wa.me/?text=${encodeURIComponent(text + " " + url)}`],
+      ["email", "Email", `mailto:?subject=${encodeURIComponent("Listen with me: " + what)}&body=${encodeURIComponent(text + "\n\n" + url)}`]
+    ];
+    pop.innerHTML = `<p class="np-share-head">Share what's playing</p><p class="np-share-what"></p><ul class="np-share-list">${
+      links.map(([k, n, h]) => `<li><a class="np-share-btn" href="${h}"${k === "email" ? "" : ' target="_blank" rel="noopener"'} aria-label="Share on ${n}" title="${n}">${svg(k)}</a></li>`).join("")
+    }<li><button type="button" class="np-share-btn np-share-copy" aria-label="Copy link" title="Copy link">${svg("link")}</button></li></ul><p class="np-share-status" role="status" aria-live="polite"></p>`;
+    pop.querySelector(".np-share-what").textContent = what;
+    pop.querySelector(".np-share-copy").addEventListener("click", async () => {
+      const s = pop.querySelector(".np-share-status");
+      try { await navigator.clipboard.writeText(`${text} ${url}`); s.textContent = "Copied! Paste it anywhere."; }
+      catch { s.textContent = url; }
+    });
+  }
+  const closePop = () => { pop.hidden = true; shareBtn.setAttribute("aria-expanded", "false"); };
+
+  shareBtn.addEventListener("click", async () => {
+    const { url, text } = shareInfo();
+    if (navigator.share && matchMedia("(pointer: coarse)").matches) {
+      try { await navigator.share({ title: STATION_NAME, text, url }); } catch {}
+      return;
+    }
+    if (pop.hidden) {
+      buildPop();
+      pop.hidden = false;
+      shareBtn.setAttribute("aria-expanded", "true");
+      pop.querySelector("a, button")?.focus();
+    } else closePop();
+  });
+  document.addEventListener("click", e => { if (!pop.hidden && !pop.contains(e.target) && !shareBtn.contains(e.target)) closePop(); });
+  document.addEventListener("keydown", e => { if (e.key === "Escape" && !pop.hidden) { closePop(); shareBtn.focus(); } });
 
   el.art.addEventListener("error", () => {
     if (!el.art.src.endsWith(FALLBACK_ART)) el.art.src = FALLBACK_ART;
