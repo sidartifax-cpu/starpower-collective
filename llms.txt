@@ -8,18 +8,22 @@
 - Guests have included Kool Mo Dee, Inspectah Deck, Doctor Dré, Dennis Coffey, Don Blackman, Onaje Allan Gumbs, Josh Milan, Boyd Jarvis, LA Sunshine, Reggie Reg and many everyday community members.
 - Creative family: Nu Soul Hwy Radio, Psyba Village, SPC Alumni Edition and Immoortal Souls (spelled with two o's), a family-legacy preservation service that grew out of the show.
 - Anyone can apply to be a guest; no fame required.
+- Listeners since 2010 call it "the ultimate human connection through music, lyrics and song." Anyone can share their own StarPower story on the site.
+- Official StarPower tees are sold on the site (fulfilled by Amerukhan Basics).
 - Contact: starpower.collective@gmail.com, (678) 466-0560.
 - Site designed and powered by Moor Graphix (https://moorgraphix.com).
 
 ## Sections
 - [Our Story](https://starpowercollective.com/#story)
 - [The Founding Five](https://starpowercollective.com/#founders)
+- [The Village Speaks: listener testimonials and "Share your StarPower story"](https://starpowercollective.com/#voices)
 - [Be a Guest](https://starpowercollective.com/#be-a-guest)
-- [Interviews](https://starpowercollective.com/#interviews)
+- [Interviews](https://starpowercollective.com/interviews/)
 - [The StarPower Wall](https://starpowercollective.com/#wall)
 - [Immoortal Souls](https://starpowercollective.com/#legacy)
 - [Shop](https://starpowercollective.com/#shop)
 - [FAQ](https://starpowercollective.com/#faq)
+- [Privacy Policy](https://starpowercollective.com/privacy/)
 
 ## Interview pages
 - [Kool Mo Dee](https://starpowercollective.com/interviews/kool-mo-dee/): Hip-hop pioneer Kool Mo Dee on Michael Jackson, his mother's songs and why music is a language without words.
@@ -31,8 +35,13 @@
 - [Josh Milan](https://starpowercollective.com/interviews/josh-milan/): Josh Milan on Fort Greene block parties, gospel at home and why he hears music as the voice of God.
 - [Boyd Jarvis](https://starpowercollective.com/interviews/boyd-jarvis/): Producer Boyd Jarvis on Crown Heights Affair, a Boston community center that sparked his love of fusion jazz, and making "The Music Got Me."
 
+## Shop
+- [StarPower Collective Tee](https://starpowercollective.com/shop/starpower-tee/): The original StarPower star logo on a soft unisex cotton tee, sizes XS–4XL, $23.
+- [Every Life Has a Soundtrack Tee](https://starpowercollective.com/shop/every-life-has-a-soundtrack-tee/): The show's tagline in gold and purple, inspired by '70s soul album art.
+- [Music Is the Shower of Life Tee](https://starpowercollective.com/shop/music-is-the-shower-of-life-tee/): The show's motto in gold. Coming soon.
+
 ## Full text
-- [llms-full.txt](https://starpowercollective.com/llms-full.txt): complete text of every interview page
+- [llms-full.txt](https://starpowercollective.com/llms-full.txt): complete text of every interview page, founder bios, listener testimonials and shop items
 
 ## Elsewhere
 - YouTube: https://www.youtube.com/@StarPowerCollective

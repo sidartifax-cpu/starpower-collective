@@ -2614,3 +2614,5 @@ body { padding-bottom: 88px; }
   .voices-stars i, .voices-onair, .voices-signal i, .voices-quote.is-active { animation: none; }
   .voices-needle { transition: none; }
 }
+
+.shop-details { display: inline-block; margin: .25rem 0 .75rem; color: var(--gold); font-weight: 600; font-size: .9rem; text-decoration: underline; text-underline-offset: 3px; }

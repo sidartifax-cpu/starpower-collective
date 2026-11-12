@@ -2,9 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://starpowercollective.com/</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <image:image><image:loc>https://starpowercollective.com/images/og-image.jpg</image:loc></image:image>
     <image:image><image:loc>https://starpowercollective.com/images/founding-crew.png</image:loc></image:image>
+    <image:image><image:loc>https://starpowercollective.com/images/is-logo.png</image:loc></image:image>
+    <image:image><image:loc>https://starpowercollective.com/images/guest/harlem-129th-st-nicholas.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://starpowercollective.com/interviews/</loc>
@@ -53,5 +55,28 @@
   <url>
     <loc>https://starpowercollective.com/privacy/</loc>
     <lastmod>2026-11-11</lastmod>
+  </url>
+  <url>
+    <loc>https://starpowercollective.com/shop/starpower-tee/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <image:image><image:loc>https://starpowercollective.com/images/shop/og-starpower-tee.jpg</image:loc></image:image>
+    <image:image><image:loc>https://starpowercollective.com/images/shop/starpower-tee-black-1.jpg</image:loc></image:image>
+    <image:image><image:loc>https://starpowercollective.com/images/shop/starpower-tee-black-2.jpg</image:loc></image:image>
+    <image:image><image:loc>https://starpowercollective.com/images/shop/starpower-tee-white-1.jpg</image:loc></image:image>
+    <image:image><image:loc>https://starpowercollective.com/images/shop/starpower-tee-white-2.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://starpowercollective.com/shop/every-life-has-a-soundtrack-tee/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <image:image><image:loc>https://starpowercollective.com/images/shop/og-soundtrack-tee.jpg</image:loc></image:image>
+    <image:image><image:loc>https://starpowercollective.com/images/shop/soundtrack-tee-record-shop.jpg</image:loc></image:image>
+    <image:image><image:loc>https://starpowercollective.com/images/shop/soundtrack-tee-studio.jpg</image:loc></image:image>
+    <image:image><image:loc>https://starpowercollective.com/images/shop/every-life-has-a-soundtrack-tee.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://starpowercollective.com/shop/music-is-the-shower-of-life-tee/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <image:image><image:loc>https://starpowercollective.com/images/shop/og-shower-tee.jpg</image:loc></image:image>
+    <image:image><image:loc>https://starpowercollective.com/images/shop/music-is-the-shower-of-life-tee.jpg</image:loc></image:image>
   </url>
 </urlset>
