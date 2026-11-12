@@ -52,9 +52,10 @@ const heroGuests = [
   { name: "Nasi Jackson", image: "images/interviewees/NASI-JACKSON.jpg" },
   { name: "Golda Simpson", image: "images/interviewees/GOLDA-SIMPSON.jpg" },
   { name: "James Byers", image: "images/interviewees/James-Byers.jpg" },
-  { name: "Leeesah Pitts", image: "images/interviewees/Leeesah-Pitts.jpg" },
+  { name: "Leesah Pitts", image: "images/interviewees/Leesah-Pitts.jpg" },
   { name: "Divinity West", image: "images/interviewees/Divinity-West.jpg" },
-  { name: "Saadi", image: "images/interviewees/Saadi.jpg" }
+  { name: "Saadi", image: "images/interviewees/Saadi.jpg" },
+  { name: "Renee Neufville", image: "images/interviewees/renee-neufville.jpeg" }
 ];
 
 
