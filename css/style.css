@@ -2630,18 +2630,3 @@ body { padding-bottom: 88px; }
 .village-card:hover .village-card-art::before { transform: scale(1.06); }
 @media (prefers-reduced-motion: reduce) { .village-card-art::before { transition: none; } .village-card:hover .village-card-art::before { transform: none; } }
 
-/* ===== Radio bar: share what's playing ===== */
-.np-share { flex: none; display: inline-flex; align-items: center; gap: 6px; background: transparent; color: var(--ivory); border: 1px solid rgba(245, 240, 232, .4); border-radius: 999px; padding: 8px 14px; font: 600 .75rem var(--body); letter-spacing: .08em; text-transform: uppercase; cursor: pointer; }
-.np-share svg { width: 14px; height: 14px; fill: currentColor; }
-.np-share:hover, .np-share:focus-visible, .np-share[aria-expanded="true"] { border-color: var(--gold); color: var(--gold); outline: none; }
-.np-share-pop { position: absolute; bottom: calc(100% + 10px); right: 16px; z-index: 5; width: min(320px, calc(100vw - 32px)); padding: 16px; border-radius: 14px;
-  background: #11172c; border: 1px solid rgba(245, 228, 0, .45); box-shadow: 0 18px 40px rgba(0, 0, 0, .55); color: var(--ivory); }
-.np-share-head { margin: 0; font-size: .7rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); }
-.np-share-what { margin: 4px 0 12px; font-family: var(--heading); font-size: 1.1rem; line-height: 1.3; }
-.np-share-list { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; }
-.np-share-btn { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 50%; border: 1px solid rgba(245, 240, 232, .35); background: transparent; color: var(--ivory); cursor: pointer; }
-.np-share-btn svg { width: 18px; height: 18px; fill: currentColor; }
-.np-share-btn:hover, .np-share-btn:focus-visible { background: var(--gold); border-color: var(--gold); color: #11172c; outline: none; }
-.np-share-status { margin: 10px 0 0; font-size: .8rem; color: var(--gold); min-height: 1em; }
-@media (max-width: 600px) { .np-share span { display: none; } .np-share { padding: 8px 10px; } }
-@media (min-width: 900px) { .np-bar { overflow: visible; } .np-share-pop { right: 0; } }
