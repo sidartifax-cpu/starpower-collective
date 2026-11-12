@@ -2616,3 +2616,16 @@ body { padding-bottom: 88px; }
 }
 
 .shop-details { display: inline-block; margin: .25rem 0 .75rem; color: var(--gold); font-weight: 600; font-size: .9rem; text-decoration: underline; text-underline-offset: 3px; }
+
+/* ===== Village cards: photo headers ===== */
+.village-card { overflow: hidden; }
+.village-card-art { position: relative; isolation: isolate; min-height: clamp(260px, 26vw, 360px); overflow: hidden; }
+.village-card-art::before { content: ""; position: absolute; inset: 0; z-index: -2; background-size: cover; transition: transform 1.2s ease; }
+.village-card-art::after { content: ""; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(180deg, rgba(16, 24, 44, .55) 0%, rgba(16, 24, 44, 0) 30%, rgba(32, 42, 68, 0) 62%, #202a44 100%); }
+.family-art::before { background-image: url("../images/village/stories-we-carry.jpg"); background-position: 62% 0%; }
+.music-art::before { background-image: url("../images/village/reach-for-the-stars.jpg"); background-position: 60% 74%; }
+.village-card-art .village-art-symbol { font-size: 44px; align-self: flex-end; opacity: .9; text-shadow: 0 2px 12px rgba(0, 0, 0, .6); }
+.village-card-art > span:first-child { text-shadow: 0 1px 8px rgba(0, 0, 0, .8); }
+.village-card:hover .village-card-art::before { transform: scale(1.06); }
+@media (prefers-reduced-motion: reduce) { .village-card-art::before { transition: none; } .village-card:hover .village-card-art::before { transform: none; } }
